@@ -1,0 +1,35 @@
+{
+  "有风险": {
+    "product": "某品牌纯牛奶",
+    "expiry_days": 3,
+    "allergen_hit": "乳糖",
+    "price": "5.00",
+    "advice": "建议换一盒",
+    "reason": "还有 3 天过期，且你乳糖不耐受",
+    "options": ["换一盒无乳糖牛奶", "这盒尽快喝完"],
+    "user_decides": true,
+    "speech": "这盒牛奶还有 3 天过期，你乳糖不耐受，建议换一盒；要不要听听别的选项？"
+  },
+  "无风险": {
+    "product": "某品牌纯牛奶",
+    "expiry_days": 30,
+    "allergen_hit": null,
+    "price": "5.00",
+    "advice": "可以考虑这盒",
+    "reason": "没看到过期或过敏风险",
+    "options": ["就选这盒", "再看看别的"],
+    "user_decides": true,
+    "speech": "没看到过期或过敏风险，可以考虑这盒，最终你决定。"
+  },
+  "信息不足": {
+    "product": "某品牌纯牛奶",
+    "expiry_days": null,
+    "allergen_hit": null,
+    "price": null,
+    "advice": "建议让家人帮你看一眼",
+    "reason": "没看清保质期",
+    "options": ["拍照发给家人", "再拍一次"],
+    "user_decides": true,
+    "speech": "没看清保质期，建议让家人帮你看一眼，你自己定。"
+  }
+}
