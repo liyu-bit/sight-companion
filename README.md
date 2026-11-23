@@ -52,11 +52,11 @@ py -3.13 -m uvicorn agents.orchestrate:app --host 0.0.0.0 --port 8000
 
 红线：输出是建议不是判决，**不得出现 `verdict` / 能买 / 别买 / 必须买**；`user_decides` 恒为 `true`。
 
-契约以 **`docs/契约.md`** 为准（待 A 更新到 2026-11-22 新版，含 `severity` 与风险双轨制）。
+契约以 **`docs/契约.md`** 为准（2026-11-22 新版，含 `severity` 与风险双轨制）。
 
 ## 当前状态
 
 - 识物、编排、TTS 已跑通（B-1）；识物基线见 `tests/recognition_baseline.json`
 - `agents/advise.py` 仍是 stub（返回 `tests/mock_advise.json` 的有风险样例），等 B-2 真实实现
-- `frontend/` 尚未交付，端到端联调待 A
+- `frontend/` 已交付（A），但尚未调用 `/api/advise`，端到端待完成
 - 基线样本为 AI 生成占位图，正式测试集需补真实商品照片
