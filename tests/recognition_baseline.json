@@ -1,0 +1,68 @@
+{
+  "model": "qwen3-vl-plus",
+  "run_at": "2026-11-23",
+  "summary": {
+    "total": 5,
+    "hits": 5
+  },
+  "samples": [
+    {
+      "file": "tests/sample_milk.png",
+      "difficulty": "normal",
+      "expected_category": [
+        "纯牛奶"
+      ],
+      "product": "伊利纯牛奶",
+      "category": "纯牛奶",
+      "confidence": 0.98,
+      "hit": true
+    },
+    {
+      "file": "tests/samples/milk_torn.png",
+      "difficulty": "hard",
+      "expected_category": [
+        "纯牛奶"
+      ],
+      "product": "纯牛奶",
+      "category": "纯牛奶",
+      "confidence": 0.95,
+      "hit": true
+    },
+    {
+      "file": "tests/samples/milk_top_date.png",
+      "difficulty": "hard",
+      "expected_category": [
+        "纯牛奶"
+      ],
+      "product": "纯牛奶",
+      "category": "纯牛奶",
+      "confidence": 0.98,
+      "hit": true
+    },
+    {
+      "file": "tests/samples/yogurt_worn.png",
+      "difficulty": "hard",
+      "expected_category": [
+        "酸奶"
+      ],
+      "product": "酸奶",
+      "category": "酸奶",
+      "confidence": 0.95,
+      "hit": true
+    },
+    {
+      "file": "tests/samples/bulk_noodles.png",
+      "difficulty": "hard",
+      "expected_category": [
+        "意大利面",
+        "挂面",
+        "面条"
+      ],
+      "product": "挂面",
+      "category": "挂面",
+      "confidence": 0.95,
+      "hit": true
+    }
+  ],
+  "note": "困难样本为 AI 生成图（占位），C4 测试集需补真实商品照片；本基线只评 product/category"
+}
