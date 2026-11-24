@@ -1,0 +1,257 @@
+[
+  {
+    "image": "milk.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": null,
+    "expiry_days": null,
+    "allergen_hit": "乳糖",
+    "price": null
+  },
+  {
+    "image": "test1.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "欧亚 有机·娟姗纯牛奶",
+    "expiry_days": null,
+    "allergen_hit": "乳糖",
+    "price": "98.00"
+  },
+  {
+    "image": "test2.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "欧亚 全脂灭菌乳",
+    "expiry_days": null,
+    "allergen_hit": "乳糖",
+    "price": null
+  },
+  {
+    "image": "test3.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "100%娟姗生牛乳奶源",
+    "expiry_days": -423,
+    "allergen_hit": "乳糖",
+    "price": null
+  },
+  {
+    "image": "test4.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "新希望 果粒酸奶 黄桃燕麦",
+    "expiry_days": null,
+    "allergen_hit": "乳糖",
+    "price": null
+  },
+  {
+    "image": "test5.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "蝶泉 冰淇淋酪乳",
+    "expiry_days": null,
+    "allergen_hit": "乳糖",
+    "price": null
+  },
+  {
+    "image": "test6.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "君乐宝乳业集团股份有限公司出品",
+    "expiry_days": null,
+    "allergen_hit": "乳糖",
+    "price": null
+  },
+  {
+    "image": "test7.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "欧亚 快乐星 奶酪棒 海底探秘",
+    "expiry_days": null,
+    "allergen_hit": "乳糖",
+    "price": "9.90"
+  },
+  {
+    "image": "test8.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": null,
+    "expiry_days": null,
+    "allergen_hit": "乳糖",
+    "price": null
+  },
+  {
+    "image": "test9.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "好友趣多汁牛排味薯片",
+    "expiry_days": null,
+    "allergen_hit": null,
+    "price": "6.00"
+  },
+  {
+    "image": "test10.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "谷乐美 无糖鲜豆乳大饼",
+    "expiry_days": -401,
+    "allergen_hit": null,
+    "price": "13.50"
+  },
+  {
+    "image": "test11.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "不用地表水 深泉好水源",
+    "expiry_days": null,
+    "allergen_hit": null,
+    "price": null
+  },
+  {
+    "image": "test12.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": null,
+    "expiry_days": null,
+    "allergen_hit": null,
+    "price": null
+  },
+  {
+    "image": "test13.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "惠乔春 紫皮腰果",
+    "expiry_days": null,
+    "allergen_hit": null,
+    "price": null
+  },
+  {
+    "image": "test14.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": null,
+    "expiry_days": -170,
+    "allergen_hit": null,
+    "price": null
+  },
+  {
+    "image": "test15.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "惠乔春 葡萄干",
+    "expiry_days": null,
+    "allergen_hit": null,
+    "price": "27.80"
+  },
+  {
+    "image": "test16.jpg",
+    "user": {
+      "allergies": [
+        {
+          "name": "乳糖",
+          "severity": "mild"
+        }
+      ]
+    },
+    "product": "安佳黄油",
+    "expiry_days": -1023,
+    "allergen_hit": "乳糖",
+    "price": "16.80"
+  }
+]

@@ -1,0 +1,127 @@
+{
+  "title": "品类→过敏原映射表（品类先验）",
+  "authoritative_sources": ["GB 7718-2011《预包装食品标签通则》", "《中国食物成分表》第6版"],
+  "categories": [
+    {
+      "category": "纯牛奶",
+      "allergens": [
+        {"name": "乳糖", "severity": "mild"},
+        {"name": "牛奶蛋白", "severity": "severe"}
+      ],
+      "source": "《中国食物成分表》第6版"
+    },
+    {
+      "category": "酸奶",
+      "allergens": [
+        {"name": "乳糖", "severity": "mild"},
+        {"name": "牛奶蛋白", "severity": "severe"}
+      ],
+      "source": "《中国食物成分表》第6版"
+    },
+    {
+      "category": "黄油",
+      "allergens": [
+        {"name": "乳糖", "severity": "mild"},
+        {"name": "牛奶蛋白", "severity": "severe"}
+      ],
+      "source": "《中国食物成分表》第6版"
+    },
+    {
+      "category": "奶酪",
+      "allergens": [
+        {"name": "乳糖", "severity": "mild"},
+        {"name": "牛奶蛋白", "severity": "severe"}
+      ],
+      "source": "《中国食物成分表》第6版"
+    },
+    {
+      "category": "奶粉",
+      "allergens": [
+        {"name": "乳糖", "severity": "mild"},
+        {"name": "牛奶蛋白", "severity": "severe"}
+      ],
+      "source": "《中国食物成分表》第6版"
+    },
+    {
+      "category": "花生酱",
+      "allergens": [
+        {"name": "花生", "severity": "severe"}
+      ],
+      "source": "GB 7718-2011《预包装食品标签通则》"
+    },
+    {
+      "category": "混合坚果",
+      "allergens": [
+        {"name": "坚果", "severity": "severe"}
+      ],
+      "source": "GB 7718-2011《预包装食品标签通则》"
+    },
+    {
+      "category": "虾",
+      "allergens": [
+        {"name": "甲壳类", "severity": "severe"}
+      ],
+      "source": "GB 7718-2011《预包装食品标签通则》"
+    },
+    {
+      "category": "蟹",
+      "allergens": [
+        {"name": "甲壳类", "severity": "severe"}
+      ],
+      "source": "GB 7718-2011《预包装食品标签通则》"
+    },
+    {
+      "category": "鱼罐头",
+      "allergens": [
+        {"name": "鱼类", "severity": "severe"}
+      ],
+      "source": "GB 7718-2011《预包装食品标签通则》"
+    },
+    {
+      "category": "鸡蛋",
+      "allergens": [
+        {"name": "鸡蛋", "severity": "severe"}
+      ],
+      "source": "GB 7718-2011《预包装食品标签通则》"
+    },
+    {
+      "category": "酱油",
+      "allergens": [
+        {"name": "大豆", "severity": "severe"},
+        {"name": "小麦", "severity": "severe"}
+      ],
+      "source": "GB 7718-2011《预包装食品标签通则》"
+    },
+    {
+      "category": "豆腐",
+      "allergens": [
+        {"name": "大豆", "severity": "severe"}
+      ],
+      "source": "GB 7718-2011《预包装食品标签通则》"
+    },
+    {
+      "category": "面包",
+      "allergens": [
+        {"name": "小麦", "severity": "severe"}
+      ],
+      "source": "GB 7718-2011《预包装食品标签通则》"
+    },
+    {
+      "category": "蛋糕",
+      "allergens": [
+        {"name": "鸡蛋", "severity": "severe"},
+        {"name": "小麦", "severity": "severe"},
+        {"name": "牛奶蛋白", "severity": "severe"}
+      ],
+      "source": "GB 7718-2011《预包装食品标签通则》"
+    },
+    {
+      "category": "巧克力",
+      "allergens": [
+        {"name": "牛奶蛋白", "severity": "severe"},
+        {"name": "坚果", "severity": "severe"}
+      ],
+      "source": "GB 7718-2011《预包装食品标签通则》"
+    }
+  ]
+}
