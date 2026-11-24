@@ -39,8 +39,18 @@ py -3.13 -m uvicorn agents.orchestrate:app --host 0.0.0.0 --port 8000
 
 - `product / expiry_days / allergen_hit / price / advice / reason / options / user_decides / speech`
 - `audio`：`data:audio/x-wav;base64,...`，可直接给 `<audio src>` 播放；TTS 失败时为 `null`
+- 错误码：`image` 为空 400、缺字段 422、图片超过约 4.5MB 返回 413、建议生成失败 502
 
 红线：输出是建议不是判决，不得出现 `verdict` / 能买 / 别买 / 必须买；`user_decides` 恒为 `true`。
+
+## 冒烟检查
+
+服务启动后运行，校验 9 字段、音频、红线词与错误码：
+
+```bash
+py -3.13 tests/smoke_api.py
+# 可指定地址：py -3.13 tests/smoke_api.py https://<隧道地址>
+```
 
 ## 识物单测
 
