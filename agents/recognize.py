@@ -32,7 +32,7 @@ def _client() -> OpenAI:
     api_key = os.getenv("DASHSCOPE_API_KEY")
     if not api_key:
         raise RuntimeError("config/.env 中缺少 DASHSCOPE_API_KEY")
-    return OpenAI(api_key=api_key, base_url=BASE_URL)
+    return OpenAI(api_key=api_key, base_url=BASE_URL, timeout=45, max_retries=1)
 
 
 def _parse_json(text: str) -> dict:

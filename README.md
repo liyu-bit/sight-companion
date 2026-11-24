@@ -13,7 +13,7 @@
 | `frontend/` | A | 手机端页面、拍照、语音交互、选项按钮 |
 | `agents/recognize.py` | B-1 | 识物 Agent（含品类 `category`） |
 | `agents/orchestrate.py` | B-1 | 编排 + TTS + `POST /api/advise` |
-| `agents/advise.py` | B-2 | 购买建议 Agent（当前为临时 stub） |
+| `agents/advise.py` | B-2 | 购买建议 Agent（识别保质期/配料/价格，severity 双轨） |
 | `knowledge/` | C 阶段 | 品类→过敏映射、保质期/营养数据 |
 | `tests/` | 三人 | 假数据、商品测试集、准确率基线 |
 | `docs/` | A | 契约与最终文档 |
@@ -56,7 +56,8 @@ py -3.13 -m uvicorn agents.orchestrate:app --host 0.0.0.0 --port 8000
 
 ## 当前状态
 
-- 识物、编排、TTS 已跑通（B-1）；识物基线见 `tests/recognition_baseline.json`
-- `agents/advise.py` 仍是 stub（返回 `tests/mock_advise.json` 的有风险样例），等 B-2 真实实现
-- `frontend/` 已交付（A），但尚未调用 `/api/advise`，端到端待完成
-- 基线样本为 AI 生成占位图，正式测试集需补真实商品照片
+- 端到端已跑通：前端拍照 → `POST /api/advise` → 9 字段渲染 → 播放后端合成的语音
+- 识物、建议、编排、TTS 均为真实实现（B-1 / B-2），识物与建议并发执行
+- 热态单次约 7 秒、冷启动约 19 秒：演示前需要预热，前端请求超时建议设为 30 秒
+- 真实商品测试集：`tests/ground_truth.json` 与 17 张商品照（B-2），准确率评测入口 `tests/eval.py`
+- 识物基线 `tests/recognition_baseline.json` 为 AI 占位图，C4 阶段用真实图重跑

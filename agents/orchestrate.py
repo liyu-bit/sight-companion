@@ -126,7 +126,11 @@ def api_advise(req: AdviseRequest) -> dict:
             )
         except Exception as exc:
             print(f"[recognize] 识物失败，继续走建议：{exc}", flush=True)
-        result = result_future.result()
+        try:
+            result = result_future.result()
+        except Exception as exc:
+            print(f"[advise] 建议生成失败：{exc}", flush=True)
+            raise HTTPException(status_code=502, detail=f"建议生成失败：{exc}") from exc
 
     result["audio"] = synthesize(result.get("speech", ""))
     print(f"[advise] {result.get('advice')} | speech={result.get('speech')}", flush=True)

@@ -53,5 +53,6 @@ py -3.13 agents/recognize.py tests/samples/milk_torn.png
 
 ## 当前状态
 
-- `agents/advise.py` 是**临时 stub**（返回 `tests/mock_advise.json` 的有风险样例），B-2 交付真实实现后整体替换
-- `agents/orchestrate.py` 中识物失败只记日志、继续走建议；失败/求助的对外信号待 C 阶段接口定稿
+- `agents/advise.py` 已是 B-2 的真实实现：读生产日期/保质期、配料表、价格，按 `severity` 双轨给建议；`ingredients_read` 为模型自报字段，severe 轨的 fail-safe 仍在收紧
+- 识物与建议在 `orchestrate.py` 中并发执行，热态单次约 7 秒、冷启动约 19 秒，前端请求超时建议 30 秒
+- 识物失败只记日志、继续走建议；`advise` 抛错返回 502。severe 场景的「第一次就显示求助按钮」需要前端配合，待统一
