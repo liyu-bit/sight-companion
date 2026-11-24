@@ -1,0 +1,156 @@
+[
+  {
+    "image": "milk.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["酸奶"],
+    "expected_product": ["酸牛奶", "酸奶", "酸乳"]
+  },
+  {
+    "image": "test1.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["纯牛奶"],
+    "expected_product": ["娟姗", "纯牛奶", "欧亚"]
+  },
+  {
+    "image": "test2.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["纯牛奶"],
+    "expected_product": ["灭菌乳", "纯牛奶", "欧亚"]
+  },
+  {
+    "image": "test3.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["纯牛奶"],
+    "expected_product": ["娟姗", "生牛乳", "纯牛奶"]
+  },
+  {
+    "image": "test4.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["酸奶"],
+    "expected_product": ["酸奶", "果粒", "新希望"]
+  },
+  {
+    "image": "test5.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["酸奶", "酪乳"],
+    "expected_product": ["酪乳", "蝶泉", "冰淇淋"]
+  },
+  {
+    "image": "test6.jpg",
+    "source": "real",
+    "difficulty": "hard",
+    "expected_category": ["纯牛奶"],
+    "expected_product": ["君乐宝", "纯牛奶"]
+  },
+  {
+    "image": "test7.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["奶酪"],
+    "expected_product": ["奶酪棒", "奶酪", "欧亚"]
+  },
+  {
+    "image": "test8.jpg",
+    "source": "real",
+    "difficulty": "hard",
+    "expected_category": ["奶酪"],
+    "expected_product": ["奶酪", "干酪"]
+  },
+  {
+    "image": "test9.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["零食"],
+    "expected_product": ["薯片", "好友趣"]
+  },
+  {
+    "image": "test10.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["零食"],
+    "expected_product": ["豆乳", "大饼", "谷乐美"]
+  },
+  {
+    "image": "test11.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["饮料", "饮用水"],
+    "expected_product": ["水", "山泉", "矿泉水"]
+  },
+  {
+    "image": "test12.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["饮料", "果汁"],
+    "expected_product": ["果汁", "柠檬", "汇源"]
+  },
+  {
+    "image": "test13.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["坚果"],
+    "expected_product": ["腰果", "惠乔春"]
+  },
+  {
+    "image": "test14.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["坚果"],
+    "expected_product": ["开心果", "坚果"]
+  },
+  {
+    "image": "test15.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["零食", "果干"],
+    "expected_product": ["葡萄干", "惠乔春"]
+  },
+  {
+    "image": "test16.jpg",
+    "source": "real",
+    "difficulty": "normal",
+    "expected_category": ["黄油"],
+    "expected_product": ["黄油", "安佳"]
+  },
+  {
+    "image": "sample_milk.png",
+    "source": "ai-placeholder",
+    "difficulty": "normal",
+    "expected_category": ["纯牛奶"],
+    "expected_product": ["牛奶", "伊利"]
+  },
+  {
+    "image": "samples/milk_torn.png",
+    "source": "ai-placeholder",
+    "difficulty": "hard",
+    "expected_category": ["纯牛奶"],
+    "expected_product": ["牛奶"]
+  },
+  {
+    "image": "samples/milk_top_date.png",
+    "source": "ai-placeholder",
+    "difficulty": "hard",
+    "expected_category": ["纯牛奶"],
+    "expected_product": ["牛奶"]
+  },
+  {
+    "image": "samples/yogurt_worn.png",
+    "source": "ai-placeholder",
+    "difficulty": "hard",
+    "expected_category": ["酸奶"],
+    "expected_product": ["酸奶"]
+  },
+  {
+    "image": "samples/bulk_noodles.png",
+    "source": "ai-placeholder",
+    "difficulty": "hard",
+    "expected_category": ["挂面", "面条", "意大利面"],
+    "expected_product": ["挂面", "面", "意大利面"]
+  }
+]

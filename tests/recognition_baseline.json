@@ -1,68 +1,424 @@
 {
   "model": "qwen3-vl-plus",
-  "run_at": "2026-11-23",
+  "run_at": "2026-11-24",
   "summary": {
-    "total": 5,
-    "hits": 5
+    "total": 22,
+    "category_hits": 22,
+    "product_checked": 22,
+    "product_hits": 21,
+    "hard_total": 6,
+    "hard_category_hits": 6
   },
   "samples": [
     {
-      "file": "tests/sample_milk.png",
+      "file": "tests/milk.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "酸奶"
+      ],
+      "expected_product": [
+        "酸奶",
+        "酸乳"
+      ],
+      "product": "风味酸牛奶",
+      "category": "酸奶",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": false,
+      "hit": true
+    },
+    {
+      "file": "tests/test1.jpg",
+      "source": "real",
       "difficulty": "normal",
       "expected_category": [
         "纯牛奶"
       ],
+      "expected_product": [
+        "娟姗",
+        "纯牛奶",
+        "欧亚"
+      ],
+      "product": "娟姗有机纯牛奶",
+      "category": "纯牛奶",
+      "confidence": 0.98,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test2.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "纯牛奶"
+      ],
+      "expected_product": [
+        "灭菌乳",
+        "纯牛奶",
+        "欧亚"
+      ],
+      "product": "欧亚全脂灭菌乳",
+      "category": "纯牛奶",
+      "confidence": 0.98,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test3.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "纯牛奶"
+      ],
+      "expected_product": [
+        "娟姗",
+        "生牛乳",
+        "纯牛奶"
+      ],
+      "product": "100%娟姗生牛乳奶源",
+      "category": "纯牛奶",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test4.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "酸奶"
+      ],
+      "expected_product": [
+        "酸奶",
+        "果粒",
+        "新希望"
+      ],
+      "product": "黄桃燕麦果粒酸奶",
+      "category": "酸奶",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test5.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "酸奶",
+        "酪乳"
+      ],
+      "expected_product": [
+        "酪乳",
+        "蝶泉",
+        "冰淇淋"
+      ],
+      "product": "冰淇淋酪乳（白桃口味）",
+      "category": "酸奶",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test6.jpg",
+      "source": "real",
+      "difficulty": "hard",
+      "expected_category": [
+        "纯牛奶"
+      ],
+      "expected_product": [
+        "君乐宝",
+        "纯牛奶"
+      ],
+      "product": "君乐宝纯牛奶",
+      "category": "纯牛奶",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test7.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "奶酪"
+      ],
+      "expected_product": [
+        "奶酪棒",
+        "奶酪",
+        "欧亚"
+      ],
+      "product": "快乐星奶酪棒",
+      "category": "奶酪",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test8.jpg",
+      "source": "real",
+      "difficulty": "hard",
+      "expected_category": [
+        "奶酪"
+      ],
+      "expected_product": [
+        "奶酪",
+        "干酪"
+      ],
+      "product": "奶酪棒",
+      "category": "奶酪",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test9.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "零食"
+      ],
+      "expected_product": [
+        "薯片",
+        "好友趣"
+      ],
+      "product": "好友趣多汁牛排味薯片",
+      "category": "零食",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test10.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "零食"
+      ],
+      "expected_product": [
+        "豆乳",
+        "大饼",
+        "谷乐美"
+      ],
+      "product": "无糖鲜豆乳大饼",
+      "category": "零食",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test11.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "饮料",
+        "饮用水"
+      ],
+      "expected_product": [
+        "水",
+        "山泉",
+        "矿泉水"
+      ],
+      "product": "不用地表水 深层地下水",
+      "category": "饮用水",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test12.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "饮料",
+        "果汁"
+      ],
+      "expected_product": [
+        "果汁",
+        "柠檬",
+        "汇源"
+      ],
+      "product": "汇源100%梨柠檬复合果汁",
+      "category": "果汁",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test13.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "坚果"
+      ],
+      "expected_product": [
+        "腰果",
+        "惠乔春"
+      ],
+      "product": "紫皮腰果",
+      "category": "坚果",
+      "confidence": 0.98,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test14.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "坚果"
+      ],
+      "expected_product": [
+        "开心果",
+        "坚果"
+      ],
+      "product": "开心果",
+      "category": "坚果",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test15.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "零食",
+        "果干"
+      ],
+      "expected_product": [
+        "葡萄干",
+        "惠乔春"
+      ],
+      "product": "葡萄干",
+      "category": "果干",
+      "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/test16.jpg",
+      "source": "real",
+      "difficulty": "normal",
+      "expected_category": [
+        "黄油"
+      ],
+      "expected_product": [
+        "黄油",
+        "安佳"
+      ],
+      "product": "安佳黄油",
+      "category": "黄油",
+      "confidence": 0.98,
+      "category_hit": true,
+      "product_hit": true,
+      "hit": true
+    },
+    {
+      "file": "tests/sample_milk.png",
+      "source": "ai-placeholder",
+      "difficulty": "normal",
+      "expected_category": [
+        "纯牛奶"
+      ],
+      "expected_product": [
+        "牛奶",
+        "伊利"
+      ],
       "product": "伊利纯牛奶",
       "category": "纯牛奶",
       "confidence": 0.98,
+      "category_hit": true,
+      "product_hit": true,
       "hit": true
     },
     {
       "file": "tests/samples/milk_torn.png",
+      "source": "ai-placeholder",
       "difficulty": "hard",
       "expected_category": [
         "纯牛奶"
+      ],
+      "expected_product": [
+        "牛奶"
       ],
       "product": "纯牛奶",
       "category": "纯牛奶",
       "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
       "hit": true
     },
     {
       "file": "tests/samples/milk_top_date.png",
+      "source": "ai-placeholder",
       "difficulty": "hard",
       "expected_category": [
         "纯牛奶"
       ],
+      "expected_product": [
+        "牛奶"
+      ],
       "product": "纯牛奶",
       "category": "纯牛奶",
       "confidence": 0.98,
+      "category_hit": true,
+      "product_hit": true,
       "hit": true
     },
     {
       "file": "tests/samples/yogurt_worn.png",
+      "source": "ai-placeholder",
       "difficulty": "hard",
       "expected_category": [
+        "酸奶"
+      ],
+      "expected_product": [
         "酸奶"
       ],
       "product": "酸奶",
       "category": "酸奶",
       "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
       "hit": true
     },
     {
       "file": "tests/samples/bulk_noodles.png",
+      "source": "ai-placeholder",
       "difficulty": "hard",
       "expected_category": [
-        "意大利面",
         "挂面",
-        "面条"
+        "面条",
+        "意大利面"
+      ],
+      "expected_product": [
+        "挂面",
+        "面",
+        "意大利面"
       ],
       "product": "挂面",
       "category": "挂面",
       "confidence": 0.95,
+      "category_hit": true,
+      "product_hit": true,
       "hit": true
     }
   ],
-  "note": "困难样本为 AI 生成图（占位），C4 测试集需补真实商品照片；本基线只评 product/category"
+  "note": "由 tests/eval_recognize.py --write 生成；ai-placeholder 需替换成真实商品照片"
 }

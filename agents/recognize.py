@@ -20,19 +20,20 @@ PROMPT = """你是视障人士购物助手的识物 Agent。看图片判断这�
 
 要求：
 1. 即使商品没有标签、标签被撕掉或磨花、是散装商品，也要根据包装形状、颜色、材质、典型外观尽力判断，不要因为看不清文字就拒答。
-2. category 必须是常见品类，例如：纯牛奶、酸奶、花生酱、坚果、调味品、零食、饮料、面包、火腿肠、食用油、挂面、方便面、水果、蔬菜、日用品。该字段用于后续过敏判断，务必尽量准确。
-3. 如果完全无法判断，product 填「未识别」，category 填「未知」，confidence 填 0。
+2. category 必须是常见品类，例如：纯牛奶、酸奶、奶酪、黄油、花生酱、坚果、果干、调味品、零食、饮料、饮用水、果汁、面包、火腿肠、食用油、挂面、方便面、水果、蔬菜、日用品。该字段用于后续过敏判断，务必尽量准确。
+3. 注意区分：奶酪棒归「奶酪」，不要归零食或酸奶；葡萄干等归「果干」；黄油归「黄油」，不要归调味品；纯净水/矿泉水归「饮用水」；果汁归「果汁」。
+4. 如果完全无法判断，product 填「未识别」，category 填「未知」，confidence 填 0。
 
 只输出 JSON，不要输出任何其他文字：
 {"product": "商品名", "category": "品类", "confidence": 0.0}
 """
 
 
-def _client() -> OpenAI:
+def _client(timeout: float = 45) -> OpenAI:
     api_key = os.getenv("DASHSCOPE_API_KEY")
     if not api_key:
         raise RuntimeError("config/.env 中缺少 DASHSCOPE_API_KEY")
-    return OpenAI(api_key=api_key, base_url=BASE_URL, timeout=45, max_retries=1)
+    return OpenAI(api_key=api_key, base_url=BASE_URL, timeout=timeout, max_retries=1)
 
 
 def _parse_json(text: str) -> dict:
@@ -60,8 +61,8 @@ def _normalize(data: dict) -> dict:
     }
 
 
-def recognize(image_base64: str, mime: str = "image/jpeg") -> dict:
-    response = _client().chat.completions.create(
+def recognize(image_base64: str, mime: str = "image/jpeg", timeout: float = 45) -> dict:
+    response = _client(timeout).chat.completions.create(
         model=MODEL,
         messages=[
             {
@@ -80,10 +81,10 @@ def recognize(image_base64: str, mime: str = "image/jpeg") -> dict:
     return _normalize(_parse_json(response.choices[0].message.content or ""))
 
 
-def recognize_file(path: str | Path) -> dict:
+def recognize_file(path: str | Path, timeout: float = 45) -> dict:
     path = Path(path)
     mime = mimetypes.guess_type(path.name)[0] or "image/jpeg"
-    return recognize(base64.b64encode(path.read_bytes()).decode(), mime)
+    return recognize(base64.b64encode(path.read_bytes()).decode(), mime, timeout=timeout)
 
 
 if __name__ == "__main__":

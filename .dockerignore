@@ -1,0 +1,7 @@
+.git
+config/.env
+**/__pycache__
+*.pyc
+tests
+docs
+.DS_Store

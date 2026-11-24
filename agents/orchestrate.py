@@ -1,5 +1,6 @@
 """编排 + TTS（B-1）：POST /api/advise，串联识物、建议两个 Agent，合成语音。
 
+流程：识物 Agent 认出 product/category → 作为品类先验传给建议 Agent → TTS。
 启动（项目根目录）：py -3.13 -m uvicorn agents.orchestrate:app --host 0.0.0.0 --port 8000
 契约见 docs/契约.md 第 1 节：请求纯 base64 图片，响应 9 字段建议 JSON + audio。
 """
@@ -7,7 +8,6 @@
 import base64
 import os
 import time
-from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import requests
@@ -34,12 +34,14 @@ TTS_URL = "https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-genera
 TTS_MODEL = os.getenv("TTS_MODEL", "qwen3-tts-flash")
 TTS_VOICE = os.getenv("TTS_VOICE", "Cherry")
 PORT = int(os.getenv("PORT", "8000"))
+RECOGNIZE_TIMEOUT = float(os.getenv("RECOGNIZE_TIMEOUT", "20"))
 MAX_IMAGE_CHARS = 6 * 1024 * 1024  # base64 字符数上限，约 4.5MB 原图
+ALLOW_ORIGINS = [o.strip() for o in os.getenv("ALLOW_ORIGINS", "*").split(",") if o.strip()] or ["*"]
 
 app = FastAPI(title="看得见的同行者")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOW_ORIGINS,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -105,6 +107,20 @@ def synthesize(speech: str) -> str | None:
         return None
 
 
+def _evidence_from(seen: dict | None) -> str | None:
+    """把识物结果整理成品类先验，交给建议 Agent 参考。"""
+    if not seen:
+        return None
+    product = seen.get("product")
+    category = seen.get("category")
+    if product in (None, "", "未识别") and category in (None, "", "未知"):
+        return None
+    return (
+        f"识物 Agent 判断：商品「{product or '未识别'}」，品类「{category or '未知'}」，"
+        f"置信度 {seen.get('confidence')}。以上仅作品类先验，请以照片中实际可见信息为准。"
+    )
+
+
 @app.get("/api/health")
 def health() -> dict:
     return {"ok": True}
@@ -118,27 +134,39 @@ def api_advise(req: AdviseRequest) -> dict:
     if len(image) > MAX_IMAGE_CHARS:
         raise HTTPException(status_code=413, detail="图片过大，请压缩后再传")
 
-    # 识物与建议互不依赖，并发跑，省掉一次模型往返的等待
+    # 先识物再建议：category 是契约 3.5 节要求的品类先验，撕标/磨花时靠它判断乳糖
     t0 = time.perf_counter()
-    t_seen = t_result = None
-    with ThreadPoolExecutor(max_workers=2) as pool:
-        seen_future = pool.submit(recognize, image, _guess_mime(image))
-        result_future = pool.submit(advise, image, req.user)
-        try:
-            seen = seen_future.result()
-            t_seen = time.perf_counter() - t0
-            print(
-                f"[recognize] {seen['product']} / {seen['category']} / {seen['confidence']}",
-                flush=True,
-            )
-        except Exception as exc:
-            print(f"[recognize] 识物失败，继续走建议：{exc}", flush=True)
-        try:
-            result = result_future.result()
-            t_result = time.perf_counter() - t0
-        except Exception as exc:
-            print(f"[advise] 建议生成失败：{exc}", flush=True)
-            raise HTTPException(status_code=502, detail=f"建议生成失败：{exc}") from exc
+    seen = None
+    t_seen = None
+    try:
+        seen = recognize(image, _guess_mime(image), timeout=RECOGNIZE_TIMEOUT)
+        t_seen = time.perf_counter() - t0
+        print(
+            f"[recognize] {seen['product']} / {seen['category']} / {seen['confidence']} "
+            f"({t_seen:.1f}s)",
+            flush=True,
+        )
+    except Exception as exc:
+        print(f"[recognize] 识物失败，继续走建议：{exc}", flush=True)
+
+    evidence = _evidence_from(seen)
+    t_advise_start = time.perf_counter()
+    try:
+        if evidence:
+            result = advise(image, req.user, evidence=evidence)
+        else:
+            result = advise(image, req.user)
+        t_advise = time.perf_counter() - t_advise_start
+    except Exception as exc:
+        print(f"[advise] 建议生成失败：{exc}", flush=True)
+        raise HTTPException(status_code=502, detail=f"建议生成失败：{exc}") from exc
+
+    if (
+        result.get("product") in (None, "", "未识别")
+        and seen
+        and seen.get("product") not in (None, "", "未识别")
+    ):
+        result["product"] = seen["product"]
 
     t_tts_start = time.perf_counter()
     result["audio"] = synthesize(result.get("speech", ""))
@@ -146,7 +174,7 @@ def api_advise(req: AdviseRequest) -> dict:
 
     seen_cost = f"{t_seen:.1f}s" if t_seen is not None else "失败"
     print(
-        f"[timing] recognize={seen_cost} advise={t_result:.1f}s "
+        f"[timing] recognize={seen_cost} advise={t_advise:.1f}s "
         f"tts={t_end - t_tts_start:.1f}s total={t_end - t0:.1f}s",
         flush=True,
     )

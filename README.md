@@ -27,7 +27,7 @@
 py -3.13 -m pip install -r requirements.txt
 ```
 
-在 `config/.env` 放百炼 Key：
+在 `config/.env` 放百炼 Key（可从 `config/.env.example` 复制）：
 
 ```
 DASHSCOPE_API_KEY=sk-...
@@ -57,7 +57,10 @@ py -3.13 -m uvicorn agents.orchestrate:app --host 0.0.0.0 --port 8000
 ## 当前状态
 
 - 端到端已跑通：前端拍照 → `POST /api/advise` → 9 字段渲染 → 播放后端合成的语音
-- 识物、建议、编排、TTS 均为真实实现（B-1 / B-2），识物与建议并发执行
-- 热态单次约 7 秒、冷启动约 19 秒：演示前需要预热，前端请求超时建议设为 30 秒
+- 识物、建议、编排、TTS 均为真实实现（B-1 / B-2）
+- 编排已改为「先识物、后建议」：识物品类作为 `evidence` 传给建议 Agent，`product` 为空时用识物结果兜底；冒烟实测热态约 8.1 秒、慢时约 18.5 秒（含 TTS），演示前务必预热
+- 演示前端请求超时应设为 30 秒（冷启动较慢）；识物超时可通过 `RECOGNIZE_TIMEOUT` 调整
 - 真实商品测试集：`tests/ground_truth.json` 与 17 张商品照（B-2），准确率评测入口 `tests/eval.py`
-- 识物基线 `tests/recognition_baseline.json` 为 AI 占位图，C4 阶段用真实图重跑
+- 识物基线 `tests/recognition_baseline.json` 已用 22 条清单重跑（17 张真实图 + 5 张 AI 占位图，品类 22/22）；评测入口 `tests/eval_recognize.py`
+- B-1 编排单测：`py -3.13 -m unittest discover -s tests -p "test_orchestrate.py" -v`
+- 部署说明见 `agents/README.md`；`config/.env` 不进镜像和仓库
