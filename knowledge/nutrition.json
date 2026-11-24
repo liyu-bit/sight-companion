@@ -1,0 +1,15 @@
+{
+  "title": "常见营养数据（每100g/100ml约值）",
+  "source": "《中国食物成分表》第6版（约值，演示用）",
+  "items": [
+    {"category": "纯牛奶", "energy_kcal": 65, "protein_g": 3.3, "fat_g": 3.6, "carb_g": 4.9, "calcium_mg": 107},
+    {"category": "酸奶", "energy_kcal": 72, "protein_g": 2.5, "fat_g": 2.7, "carb_g": 9.3, "calcium_mg": 118},
+    {"category": "奶酪", "energy_kcal": 328, "protein_g": 25.7, "fat_g": 23.5, "carb_g": 3.5, "calcium_mg": 799},
+    {"category": "黄油", "energy_kcal": 717, "protein_g": 0.9, "fat_g": 81.1, "carb_g": 0.1, "calcium_mg": 24},
+    {"category": "奶粉", "energy_kcal": 484, "protein_g": 20.1, "fat_g": 21.2, "carb_g": 53.9, "calcium_mg": 876},
+    {"category": "饼干", "energy_kcal": 435, "protein_g": 7.1, "fat_g": 12.4, "carb_g": 74.6, "calcium_mg": 30},
+    {"category": "坚果", "energy_kcal": 590, "protein_g": 17.3, "fat_g": 50.6, "carb_g": 21.5, "calcium_mg": 68},
+    {"category": "薯片", "energy_kcal": 548, "protein_g": 5.3, "fat_g": 35.2, "carb_g": 52.4, "calcium_mg": 15},
+    {"category": "饮用水", "energy_kcal": 0, "protein_g": 0, "fat_g": 0, "carb_g": 0, "calcium_mg": 0}
+  ]
+}

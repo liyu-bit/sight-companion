@@ -1,0 +1,15 @@
+{
+  "title": "保质期规则（品类先验·演示数据）",
+  "note": "典型值为未开封常见范围，实际以包装标注为准",
+  "rules": [
+    {"category": "纯牛奶", "typical_shelf_life": "灭菌乳常温约6个月；巴氏杀菌乳冷藏2-7天", "storage": "灭菌乳常温避光；巴氏乳2-6℃冷藏", "opened": "开封后冷藏并24小时内喝完", "source": "GB 7718-2011 标签通则及常见产品标准整理"},
+    {"category": "酸奶", "typical_shelf_life": "冷藏约21天", "storage": "2-6℃冷藏", "opened": "开封后尽快喝完", "source": "GB 7718-2011 标签通则及常见产品标准整理"},
+    {"category": "奶酪", "typical_shelf_life": "原味奶酪冷藏1-3个月；奶酪棒以包装标注为准", "storage": "冷藏", "opened": "开封后冷藏并尽快吃完", "source": "GB 7718-2011 标签通则及常见产品标准整理"},
+    {"category": "黄油", "typical_shelf_life": "冷藏6-12个月", "storage": "冷藏避光", "opened": "开封后冷藏并1个月内用完", "source": "GB 7718-2011 标签通则及常见产品标准整理"},
+    {"category": "奶粉", "typical_shelf_life": "未开封约2年", "storage": "常温干燥", "opened": "开封后密封并1个月内用完", "source": "GB 7718-2011 标签通则及常见产品标准整理"},
+    {"category": "饼干", "typical_shelf_life": "常温6-9个月", "storage": "常温干燥", "opened": "开封后密封防潮", "source": "GB 7718-2011 标签通则及常见产品标准整理"},
+    {"category": "坚果", "typical_shelf_life": "常温6-8个月", "storage": "常温干燥避光", "opened": "开封后密封并尽快吃完", "source": "GB 7718-2011 标签通则及常见产品标准整理"},
+    {"category": "薯片", "typical_shelf_life": "常温6-9个月", "storage": "常温干燥", "opened": "开封后密封防潮", "source": "GB 7718-2011 标签通则及常见产品标准整理"},
+    {"category": "饮用水", "typical_shelf_life": "常温约12个月", "storage": "常温避光", "opened": "开封后当天喝完", "source": "GB 7718-2011 标签通则及常见产品标准整理"}
+  ]
+}

@@ -10,6 +10,7 @@
       ]
     },
     "product": null,
+    "category": "酸奶",
     "expiry_days": null,
     "allergen_hit": "乳糖",
     "price": null
@@ -25,6 +26,7 @@
       ]
     },
     "product": "欧亚 有机·娟姗纯牛奶",
+    "category": "纯牛奶",
     "expiry_days": null,
     "allergen_hit": "乳糖",
     "price": "98.00"
@@ -40,6 +42,7 @@
       ]
     },
     "product": "欧亚 全脂灭菌乳",
+    "category": "纯牛奶",
     "expiry_days": null,
     "allergen_hit": "乳糖",
     "price": null
@@ -54,8 +57,9 @@
         }
       ]
     },
-    "product": "100%娟姗生牛乳奶源",
-    "expiry_days": -423,
+    "product": null,
+    "category": "纯牛奶",
+    "expiry_days": -420,
     "allergen_hit": "乳糖",
     "price": null
   },
@@ -70,6 +74,7 @@
       ]
     },
     "product": "新希望 果粒酸奶 黄桃燕麦",
+    "category": "酸奶",
     "expiry_days": null,
     "allergen_hit": "乳糖",
     "price": null
@@ -85,6 +90,7 @@
       ]
     },
     "product": "蝶泉 冰淇淋酪乳",
+    "category": "酸奶",
     "expiry_days": null,
     "allergen_hit": "乳糖",
     "price": null
@@ -99,7 +105,8 @@
         }
       ]
     },
-    "product": "君乐宝乳业集团股份有限公司出品",
+    "product": null,
+    "category": null,
     "expiry_days": null,
     "allergen_hit": "乳糖",
     "price": null
@@ -114,7 +121,8 @@
         }
       ]
     },
-    "product": "欧亚 快乐星 奶酪棒 海底探秘",
+    "product": "欧亚 快乐星 奶酪棒",
+    "category": "奶酪",
     "expiry_days": null,
     "allergen_hit": "乳糖",
     "price": "9.90"
@@ -130,6 +138,7 @@
       ]
     },
     "product": null,
+    "category": "奶酪",
     "expiry_days": null,
     "allergen_hit": "乳糖",
     "price": null
@@ -144,7 +153,8 @@
         }
       ]
     },
-    "product": "好友趣多汁牛排味薯片",
+    "product": "好友趣 多汁牛排味薯片",
+    "category": "薯片",
     "expiry_days": null,
     "allergen_hit": null,
     "price": "6.00"
@@ -160,7 +170,8 @@
       ]
     },
     "product": "谷乐美 无糖鲜豆乳大饼",
-    "expiry_days": -401,
+    "category": "饼干",
+    "expiry_days": -431,
     "allergen_hit": null,
     "price": "13.50"
   },
@@ -174,7 +185,8 @@
         }
       ]
     },
-    "product": "不用地表水 深泉好水源",
+    "product": null,
+    "category": "饮用水",
     "expiry_days": null,
     "allergen_hit": null,
     "price": null
@@ -190,6 +202,7 @@
       ]
     },
     "product": null,
+    "category": "复原果汁",
     "expiry_days": null,
     "allergen_hit": null,
     "price": null
@@ -205,6 +218,7 @@
       ]
     },
     "product": "惠乔春 紫皮腰果",
+    "category": "坚果",
     "expiry_days": null,
     "allergen_hit": null,
     "price": null
@@ -220,7 +234,8 @@
       ]
     },
     "product": null,
-    "expiry_days": -170,
+    "category": "坚果",
+    "expiry_days": -178,
     "allergen_hit": null,
     "price": null
   },
@@ -235,6 +250,7 @@
       ]
     },
     "product": "惠乔春 葡萄干",
+    "category": "坚果",
     "expiry_days": null,
     "allergen_hit": null,
     "price": "27.80"
@@ -250,7 +266,8 @@
       ]
     },
     "product": "安佳黄油",
-    "expiry_days": -1023,
+    "category": "黄油",
+    "expiry_days": null,
     "allergen_hit": "乳糖",
     "price": "16.80"
   }
